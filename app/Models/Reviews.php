@@ -9,6 +9,12 @@ use App\Models\Book;
 class Reviews extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'username',
+        'rating',
+        'comment',
+        'book_id',
+    ];
 
     public function book()
     {
