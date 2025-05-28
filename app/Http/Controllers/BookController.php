@@ -9,7 +9,7 @@ class BookController extends Controller
 {
     public static function bookList()
     {
-        $books = Book::all();
+        $books = Book::with(['author', 'genre'])->get();
         return $books;
     }
 
