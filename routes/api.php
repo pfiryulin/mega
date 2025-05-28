@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ReviewsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\BookController;
@@ -20,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::get('/books', [BookController::class, 'bookList']);
 Route::get('/books/{id}', [BookController::class, 'bookDetail']);
+Route::post('/books/{id}/reviews', [ReviewsController::class, 'store']);
