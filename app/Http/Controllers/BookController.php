@@ -15,7 +15,7 @@ class BookController extends Controller
 
     public static function bookDetail($id)
     {
-        $book = Book::with(['author', 'genre'])->find($id);
+        $book = Book::with(['author', 'genre', 'reviews'])->find($id);
 
         return $book;
     }
