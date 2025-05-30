@@ -1,9 +1,7 @@
 <?php
 
-use App\Http\Controllers\ReviewsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\BookController;
 use \App\Http\Controllers\BookControllerResurs;
 use App\Http\Controllers\ReviewControllerResours;
 
@@ -21,9 +19,6 @@ use App\Http\Controllers\ReviewControllerResours;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-//Route::get('/books', [BookController::class, 'bookList']);
-//Route::get('/books/{id}', [BookController::class, 'bookDetail']);
-//Route::post('/books/{id}/reviews', [ReviewsController::class, 'store']);
 
-Route::apiResource('books', \App\Http\Controllers\BookControllerResurs::class);
+Route::apiResource('books', BookControllerResurs::class);
 Route::post('/reviews', [ReviewControllerResours::class, 'store']);
